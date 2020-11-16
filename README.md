@@ -22,10 +22,10 @@ Follow the instructions at https://spin.atomicobject.com/2019/08/28/static-http-
 yarn add react-native-fs
 yarn add react-native-static-server
 yarn add react-native-webview
-react-native link react-native-fs
-react-native link react-native-static-server
-react-native link react-native-webview
-cd ios && pod install && cd -
+// react-native link react-native-fs
+// react-native link react-native-static-server
+// react-native link react-native-webview
+cd ios && pod install && cd..
 ```
 
 ### Add web files

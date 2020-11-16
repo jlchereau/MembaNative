@@ -6,6 +6,9 @@
  * @flow strict-local
  */
 
+// TODO add loading indicator https://www.instamobile.io/react-native-tutorials/react-native-webview/
+//  and/or a splashscreen
+
 /**
 import React from 'react';
 import {
@@ -237,6 +240,7 @@ class App extends React.Component {
               };
             }}
             style={{flex: 1, marginBottom: 20}}
+            // useWebKit={true} // https://github.com/react-native-webview/react-native-webview/issues/731
             originWhitelist={['*']}
             source={{uri}}
             javaScriptEnabled={true}
