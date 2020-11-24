@@ -55,9 +55,15 @@ $(() => {
 
   // $.ajax and cors
   $('#remoteXhr').click(() => {
-    $.ajax('https://demos.telerik.com/kendo-ui/content/nav.json')
+    $.ajax({
+      crossDomain: true,
+      method: 'GET',
+      // url: 'https://demos.telerik.com/kendo-ui/content/nav.json',
+      url: 'http://dummy.restapiexample.com/api/v1/employees',
+    })
       .then((data, status) => {
-        $('#text').html(`${status}: ${data.length}`);
+        // $('#text').html(`${status}: ${data.length}`);
+        $('#text').html(`${status}: ${data.data.length}`);
       })
       .catch((xhr, status, errorThrown) => {
         $('#text').html(`${status}: ${errorThrown}`);

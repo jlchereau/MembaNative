@@ -247,6 +247,8 @@ class App extends React.Component {
             domStorageEnabled={true}
             // allowingReadAccessToURL ?
             allowFileAccess={true}
+            // @see https://github.com/react-native-webview/react-native-webview/pull/1730
+            allowFileAccessFromFileURLs={true}
             allowUniversalAccessFromFileURLs={true}
             onMessage={(event) => {
               alert(event.nativeEvent.data);
