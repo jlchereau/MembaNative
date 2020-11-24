@@ -98,7 +98,7 @@ $(() => {
                   fileWriter.onerror = (e) => {
                     console.log('Failed file write: ' + e.toString());
                   };
-                  const dataObj = new Blob(data, {type: 'image/svg+xml'});
+                  const dataObj = new Blob([data], {type: 'image/svg+xml'});
                   fileWriter.write(dataObj);
                 });
               },
@@ -113,7 +113,7 @@ $(() => {
       });
   });
   $('#fileClear').click(() => {
-    $('#image').attr('src', '');
+    $('#image').attr('src', './build/finger.png');
   });
 
   // TODO window.open (inAppBrowser)
