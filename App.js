@@ -232,6 +232,17 @@ class App extends React.Component {
         </Text>
         <View style={{height: '100%', width: '100%'}}>
           <WebView
+            allowFileAccess={true}
+            // @see https://github.com/react-native-webview/react-native-webview/pull/1730
+            allowFileAccessFromFileURLs={true}
+            // allowingReadAccessToURL ?
+            allowUniversalAccessFromFileURLs={true}
+            domStorageEnabled={true}
+            javaScriptEnabled={true}
+            onMessage={(event) => {
+              window.alert(event.nativeEvent.data);
+            }}
+            originWhitelist={['*']}
             // ref={(r) => (this.webref = r)}
             ref={(r) => {
               this.webref = r;
@@ -239,20 +250,11 @@ class App extends React.Component {
                 r.injectJavaScript(createMessageFunction(message));
               };
             }}
+            // setSupportMultipleWindows={true} // https://github.com/react-native-webview/react-native-webview/releases/tag/v11.0.0
+            source={{uri}}
+            // eslint-disable-next-line react-native/no-inline-styles
             style={{flex: 1, marginBottom: 20}}
             // useWebKit={true} // https://github.com/react-native-webview/react-native-webview/issues/731
-            originWhitelist={['*']}
-            source={{uri}}
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            // allowingReadAccessToURL ?
-            allowFileAccess={true}
-            // @see https://github.com/react-native-webview/react-native-webview/pull/1730
-            allowFileAccessFromFileURLs={true}
-            allowUniversalAccessFromFileURLs={true}
-            onMessage={(event) => {
-              alert(event.nativeEvent.data);
-            }}
           />
         </View>
       </SafeAreaView>

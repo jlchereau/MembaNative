@@ -14,7 +14,7 @@
     "react-native": "0.63.3",
     "react-native-fs": "^2.16.6",
     "react-native-static-server": "^0.5.0",
-    "react-native-webview": "^10.10.2"
+    "react-native-webview": "11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
