@@ -6,6 +6,7 @@
 
 # iOS WKWebView
 
+- https://medium.com/@catchvarun25/migration-of-uiwebview-to-wkwebview-9945ebb70e15
 - https://reactnative.dev/blog/2018/08/27/wkwebview
 - https://github.com/apache/cordova-ios/issues/883
 
