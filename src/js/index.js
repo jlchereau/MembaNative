@@ -13,7 +13,17 @@ window.addEventListener('message', function (event) {
   alert('message received: ' + event.data);
 });
 
+window.app = {
+  onLayoutShow(e) {
+    console.log('show');
+  },
+};
+
 $(() => {
+  new window.kendo.mobile.Application($(document.body), {
+    skin: 'flat',
+  });
+
   $('#text').html('Javascript works!');
 
   // Post message to react
@@ -113,7 +123,7 @@ $(() => {
       });
   });
   $('#fileClear').click(() => {
-    $('#image').attr('src', './build/finger.png');
+    $('#image').attr('src', './build/images/finger.png');
   });
 
   // TODO window.open (inAppBrowser)
