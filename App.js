@@ -119,7 +119,7 @@ export default App;
 */
 
 import React from 'react';
-import {Platform, SafeAreaView, Text, View} from 'react-native';
+import {Platform, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 // import StaticServer from 'react-native-static-server';
 import WebView from 'react-native-webview';
 // import RNFS from 'react-native-fs';
@@ -230,7 +230,7 @@ class App extends React.Component {
           }}>
           {uri}
         </Text>
-        <View style={{height: '100%', width: '100%'}}>
+        <View style={styles.container}>
           <WebView
             allowFileAccess={true}
             // @see https://github.com/react-native-webview/react-native-webview/pull/1730
@@ -253,7 +253,7 @@ class App extends React.Component {
             // setSupportMultipleWindows={true} // https://github.com/react-native-webview/react-native-webview/releases/tag/v11.0.0
             source={{uri}}
             // eslint-disable-next-line react-native/no-inline-styles
-            style={{flex: 1, marginBottom: 20}}
+            style={styles.webview}
             // useWebKit={true} // https://github.com/react-native-webview/react-native-webview/issues/731
           />
         </View>
@@ -261,5 +261,16 @@ class App extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+    width: '100%',
+  },
+  webview: {
+    flex: 1,
+    marginBottom: 20,
+  },
+});
 
 export default App;
